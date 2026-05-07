@@ -1,0 +1,552 @@
+/* --- 1. CSS Değişkenleri (Renk Paleti ve Sabitler) --- */
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-green: #10b981;
+    --border-color: #334155;
+    --tab-bg: #1e293b;
+    --tab-hover: #334155;
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'Consolas', 'Courier New', monospace;
+}
+
+/* --- 2. CSS Sıfırlama (Reset) --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* --- 3. Temel Gövde (Body) Ayarları --- */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- 4. Taşıyıcı Kutu (Container) --- */
+.container { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* --- 5. Başlık (Header) ve Sekme Menüsü Tasarımı --- */
+.header { 
+    padding-top: 30px; 
+    margin-bottom: 40px; 
+}
+
+.header h1.logo-container { 
+    font-size: 26px; 
+    font-weight: 600; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 12px; /* Logo ile yazı arasındaki boşluk */
+    margin-bottom: 5px; 
+}
+
+.brand-icon {
+    /* Logoya hafif bir parlama efekti veriyoruz */
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.3));
+}
+
+.header .subtitle { 
+    color: var(--text-muted); 
+    font-weight: 400; 
+    font-size: 20px;
+}
+
+.header .subtitle { 
+    color: var(--text-muted); 
+    font-weight: 400; 
+}
+
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: none;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover { 
+    background-color: var(--tab-hover); 
+    color: var(--text-main); 
+}
+
+.tab-btn.active {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--accent-green);
+    border-bottom: 2px solid var(--accent-green);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* --- 6. Kategori Gizleme / Gösterme Mantığı --- */
+.category-section { 
+    display: none; 
+    animation: fadeIn 0.4s ease; 
+}
+
+.category-section.active-tab { 
+    display: block; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 7. NASIL ÇALIŞIR (HERO) BÖLÜMÜ --- */
+.hero-section {
+    text-align: center;
+    padding: 20px 0 40px 0;
+}
+
+.hero-title {
+    font-size: 28px;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+.hero-desc {
+    color: var(--text-muted);
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+.steps-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .steps-container {
+        flex-direction: column;
+    }
+}
+
+.step-box {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px 20px;
+    flex: 1;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.step-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-green);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--accent-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto 15px auto;
+}
+
+.step-box h3 {
+    color: var(--text-main);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.step-box p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* --- 8. Uygulama Kartı (App Card) Tasarımı --- */
+.app-grid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.app-card { 
+    background-color: var(--card-bg); 
+    border: 1px solid var(--border-color); 
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+
+.app-info { 
+    padding: 20px; 
+}
+
+.app-header { 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 15px; 
+}
+
+.app-logo { 
+    width: 48px; 
+    height: 48px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-weight: bold; 
+    margin-right: 15px; 
+    flex-shrink: 0; 
+}
+
+.app-details { 
+    flex-grow: 1; 
+}
+
+.app-name { 
+    font-size: 18px; 
+    font-weight: 500; 
+}
+
+.app-desc { 
+    font-size: 14px; 
+    color: var(--text-muted); 
+    margin-top: 2px; 
+}
+
+.toggle-btn { 
+    background: none; 
+    border: none; 
+    color: var(--text-muted); 
+    cursor: pointer; 
+    padding: 5px; 
+    transition: transform 0.3s ease; 
+}
+
+.toggle-btn:hover { 
+    color: var(--text-main); 
+}
+
+.app-card.is-open .chevron-icon { 
+    transform: rotate(180deg); 
+}
+
+/* --- 9. İşletim Sistemi Seçici (OS Selector) --- */
+.os-selector { 
+    display: flex; 
+    gap: 10px; 
+    margin-left: 63px; 
+}
+
+.os-btn { 
+    background: transparent; 
+    border: 1px solid var(--border-color); 
+    color: var(--text-muted); 
+    padding: 6px 12px; 
+    border-radius: 4px; 
+    font-size: 13px; 
+    font-family: inherit; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+    transition: all 0.2s ease; 
+}
+
+.os-btn:hover { 
+    border-color: var(--text-main); 
+    color: var(--text-main); 
+}
+
+.os-btn.active { 
+    background-color: rgba(16, 185, 129, 0.1); 
+    border-color: var(--accent-green); 
+    color: var(--text-main); 
+}
+
+.os-btn .check-icon { 
+    display: none; 
+}
+
+.os-btn.active .check-icon { 
+    display: block; 
+    color: var(--accent-green); 
+}
+
+/* --- 10. Terminal Kutusu ve Akordeon Yapısı --- */
+.terminal-container { 
+    padding: 0 20px 20px 20px; 
+    max-height: 0; 
+    opacity: 0; 
+    transition: max-height 0.4s ease, opacity 0.3s ease; 
+    overflow: hidden; 
+}
+
+.app-card.is-open .terminal-container { 
+    max-height: 200px; 
+    opacity: 1; 
+}
+
+.terminal-box { 
+    background-color: #000; 
+    border: 1px solid var(--accent-green); 
+    border-radius: 6px; 
+}
+
+.terminal-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 8px 15px; 
+    border-bottom: 1px solid #333; 
+    background-color: #111; 
+    border-top-left-radius: 6px; 
+    border-top-right-radius: 6px; 
+}
+
+.terminal-dots { 
+    display: flex; 
+    gap: 6px; 
+}
+
+.dot { 
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%; 
+}
+
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.copy-btn { 
+    background: transparent; 
+    border: 1px solid #333; 
+    color: var(--text-muted); 
+    padding: 4px 10px; 
+    border-radius: 4px; 
+    font-size: 12px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    gap: 5px; 
+    transition: background 0.2s; 
+}
+
+.copy-btn:hover { 
+    background-color: #333; 
+    color: var(--text-main); 
+}
+
+.terminal-code { 
+    padding: 15px; 
+    font-family: var(--font-mono); 
+    font-size: 14px; 
+    color: var(--accent-green); 
+    overflow-x: auto; 
+}
+
+.terminal-code .prompt { 
+    color: var(--text-muted); 
+    margin-right: 8px; 
+    user-select: none; 
+}
+
+/* --- 11. FOOTER (ALT BİLGİ) --- */
+.footer {
+    text-align: center;
+    padding: 40px 0 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.footer .developers {
+    margin-top: 5px;
+    color: #64748b;
+}
+
+/* Başlığın tamamını tıklanabilir yapma */
+.app-header { 
+    cursor: pointer; 
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    padding: 5px; /* Tıklama alanını biraz genişletmek için */
+}
+
+.app-header:hover {
+    background-color: rgba(255, 255, 255, 0.03); /* Üzerine gelince hafif parlama */
+}
+
+/* Linux Dağıtım Seçim Kutusu */
+.distro-select {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 4px;
+    padding: 0 5px;
+    font-size: 12px;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+}
+
+.distro-select:focus {
+    border-color: var(--accent-green);
+}
+
+.distro-select option {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+}
+
+/* --- 12. TOPLU KURULUM (BATCH SCRIPT) YÜZEN KUTUSU (FLOATING WIDGET) --- */
+.app-checkbox {
+    display: none;
+}
+
+.add-to-batch-btn {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: inherit;
+}
+
+.add-to-batch-btn:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+.add-to-batch-btn.selected {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+/* Yüzen Kutu (Sağ Alt Köşe) Ayarları */
+.batch-bar {
+    position: fixed;
+    bottom: 30px; /* Ekranın altından boşluk */
+    right: 30px;  /* Ekranın sağından boşluk */
+    background-color: #111827;
+    border: 1px solid var(--accent-green);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Şık bir gölge */
+    width: 250px; /* Kutunun genişliği */
+    z-index: 1000;
+    
+    /* Zıplama Efektli Animasyon */
+    transform: translateY(150px) scale(0.9);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none; /* Gizliyken tıklanmayı engeller */
+}
+
+/* Kutu Görünür Olduğunda */
+.batch-bar.visible {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Kutunun İçini Alt Alta Dizme */
+.batch-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Kaç Araç Seçildi Yazısı */
+.batch-info {
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--text-main);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#selected-count {
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Seçici ve İndir Butonu Konteyneri */
+.batch-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* İşletim Sistemi Seçici Menü */
+.batch-select {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 10px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Toplu İndir Butonu */
+.batch-btn {
+    background-color: var(--accent-green);
+    color: #000;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.batch-btn:hover {
+    background-color: #0ea5e9;
+    color: #fff;
+}
