@@ -36,7 +36,7 @@
         <section id="how-it-works" class="category-section active-tab">
             <div class="hero-section">
                 <h2 class="hero-title">Dijital Gizliliğini Geri Kazan</h2>
-                <p class="hero-desc">PriveGet, karmaşık dokümanlar arasında kaybolmadan, en güvenilir açık kaynaklı araçları sistemine kurmanın en hızlı yoludur. Araçlarını seç, betiği indir ve tek tıkla kur.</p>
+                <p class="hero-desc">PriveGet, karmaşık dokümanlar arasında kaybolmadan, en güvenilir açık kaynaklı araçları sistemine kurmanın en hızlı yoludur. Araçlarını seç, betiğini oluştur ve tek tıkla kur.</p>
                 
                 <div class="steps-container">
                     <div class="step-box">
@@ -46,13 +46,13 @@
                     </div>
                     <div class="step-box">
                         <div class="step-number">2</div>
-                        <h3>Toplu Kurulum Üret</h3>
-                        <p>Ekranın altında beliren menüden işletim sistemini seç ve özel kurulum dosyanı (Script) indir.</p>
+                        <h3>Toplu Kod Üret</h3>
+                        <p>Ekranın altında beliren menüden işletim sistemini seç ve özel kurulum komutlarını oluştur.</p>
                     </div>
                     <div class="step-box">
                         <div class="step-number">3</div>
-                        <h3>Tek Tıkla Çalıştır</h3>
-                        <p>İndirdiğin dosyayı terminal veya komut satırında çalıştır, PriveGet hepsini sırayla otomatik kursun.</p>
+                        <h3>Kopyala ve Çalıştır</h3>
+                        <p>Oluşturulan kodu tek tuşla kopyala, terminal veya komut satırına yapıştır.</p>
                     </div>
                 </div>
             </div>
@@ -388,8 +388,8 @@
                 </article>
             </div>
         </section>
-        
-        <br><br><br> </main>
+
+    </main>
 
     <footer class="footer">
         <div class="container">
@@ -405,13 +405,29 @@
             </div>
             <div class="batch-controls">
                 <select id="batch-os-select" class="batch-select">
-                    <option value="windows">Windows (.bat)</option>
-                    <option value="linux-apt">Ubuntu/Debian (.sh)</option>
-                    <option value="linux-pacman">Arch Linux (.sh)</option>
-                    <option value="linux-dnf">Fedora (.sh)</option>
-                    <option value="macos">macOS (.sh)</option>
+                    <option value="windows">Windows</option>
+                    <option value="linux-apt">Ubuntu/Debian (apt)</option>
+                    <option value="linux-pacman">Arch Linux (pacman)</option>
+                    <option value="linux-dnf">Fedora (dnf)</option>
+                    <option value="macos">macOS</option>
                 </select>
-                <button id="download-script-btn" class="batch-btn">Toplu Dosyayı İndir</button>
+                <button id="generate-script-btn" class="batch-btn">Kodu Oluştur</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="code-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Özel Kurulum Kodun</h3>
+                <button id="close-modal-btn" class="close-btn">&times;</button>
+            </div>
+            <div class="terminal-box modal-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <button id="copy-modal-btn" class="copy-btn"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> Hepsini Kopyala</button>
+                </div>
+                <div class="terminal-code"><pre id="generated-code-block"></pre></div>
             </div>
         </div>
     </div>
