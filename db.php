@@ -2,7 +2,7 @@
 $host = 'localhost';
 $dbname = 'priveget_db'; 
 $user = 'root';          
-$pass = 'kendi veritabani sifresi';              
+$pass = 'kendi veritabani sifresi'; //test
 
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
