@@ -5,7 +5,7 @@ $host = isset($env['HOST_NAME']) ? $env['HOST_NAME'] : (getenv('HOST_NAME') ?: '
 
 $dbname = 'priveget_db'; 
 $user = 'root';          
-$pass = $env['DATABASE_PASSWORD']; //database sifresini kullaniyoruz
+$pass = isset($env['DATABASE_PASSWORD']) ? $env['DATABASE_PASSWORD'] : (getenv('DATABASE_PASSWORD') ?: '');
 
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
