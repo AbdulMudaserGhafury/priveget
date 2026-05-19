@@ -30,357 +30,50 @@
             </nav>
         </div>
     </header>
+        <main class="main-content container">
 
-    <main class="main-content container">
-
-        <section id="how-it-works" class="category-section active-tab">
-            <div class="hero-section">
-                <h2 class="hero-title">Dijital Gizliliğini Geri Kazan</h2>
-                <p class="hero-desc">PriveGet, karmaşık dokümanlar arasında kaybolmadan, en güvenilir açık kaynaklı araçları sistemine kurmanın en hızlı yoludur. Araçlarını seç, betiğini oluştur ve tek tıkla kur.</p>
+                <section id="how-it-works" class="category-section active-tab">
+                    <div class="hero-section">
+                        <h2 class="hero-title">Dijital Gizliliğini Geri Kazan</h2>
+                        <p class="hero-desc">PriveGet, karmaşık dokümanlar arasında kaybolmadan, en güvenilir açık kaynaklı araçları sistemine kurmanın en hızlı yoludur. Araçlarını seç, betiğini oluştur ve tek tıkla kur.</p>
+                        
+                        <div class="steps-container">
+                            <div class="step-box">
+                                <div class="step-number">1</div>
+                                <h3>Araçlarını Seç</h3>
+                                <p>Kategorilerde gezin ve sistemine kurmak istediğin araçların yanındaki 'Ekle' butonuna tıkla.</p>
+                            </div>
+                            <div class="step-box">
+                                <div class="step-number">2</div>
+                                <h3>Toplu Kod Üret</h3>
+                                <p>Ekranın altında beliren menüden işletim sistemini seç ve özel kurulum komutlarını oluştur.</p>
+                            </div>
+                            <div class="step-box">
+                                <div class="step-number">3</div>
+                                <h3>Kopyala ve Çalıştır</h3>
+                                <p>Oluşturulan kodu tek tuşla kopyala, terminal veya komut satırına yapıştır.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 
-                <div class="steps-container">
-                    <div class="step-box">
-                        <div class="step-number">1</div>
-                        <h3>Araçlarını Seç</h3>
-                        <p>Kategorilerde gezin ve sistemine kurmak istediğin araçların yanındaki 'Ekle' butonuna tıkla.</p>
-                    </div>
-                    <div class="step-box">
-                        <div class="step-number">2</div>
-                        <h3>Toplu Kod Üret</h3>
-                        <p>Ekranın altında beliren menüden işletim sistemini seç ve özel kurulum komutlarını oluştur.</p>
-                    </div>
-                    <div class="step-box">
-                        <div class="step-number">3</div>
-                        <h3>Kopyala ve Çalıştır</h3>
-                        <p>Oluşturulan kodu tek tuşla kopyala, terminal veya komut satırına yapıştır.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="browsers" class="category-section hidden-tab">
-            <div class="app-grid">
-                <article class="app-card" data-app-id="librewolf">
-                    <div class="app-info">
-                        <div class="app-header">
-                            <button class="add-to-batch-btn" data-value="librewolf"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ekle</button>
-                            <div class="app-details">
-                                <h3 class="app-name">LibreWolf</h3>
-                                <p class="app-desc">Gizlilik odaklı, telemetri içermeyen hızlı web tarayıcısı.</p>
-                            </div>
-                            <button class="toggle-btn"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                        </div>
-                        <div class="os-selector">
-                            <button class="os-btn" data-os="windows">Windows</button>
-                            <div class="linux-group" style="display: flex; gap: 5px;">
-                                <button class="os-btn" data-os="linux">Linux</button>
-                                <select class="distro-select" style="display: none;">
-                                    <option value="apt">Ubuntu/Debian (apt)</option>
-                                    <option value="pacman">Arch (pacman/yay)</option>
-                                    <option value="dnf">Fedora (dnf)</option>
-                                </select>
-                            </div>
-                            <button class="os-btn" data-os="macos">macOS</button>
-                        </div>
-                    </div>
-                    <div class="terminal-container">
-                        <div class="terminal-box">
-                            <div class="terminal-header">
-                                <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                                <button class="copy-btn"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> kopyala</button>
-                            </div>
-                            <div class="terminal-code"><span class="prompt">$</span> <span class="command-text">Yükleniyor...</span></div>
-                        </div>
-                    </div>
-                </article>
+                <section id="browsers" class="category-section hidden-tab">
+                    <div class="app-grid" id="browsers-container"></div>
+                </section>
 
-                <article class="app-card" data-app-id="firefox-browser">
-                    <div class="app-info">
-                        <div class="app-header">
-                            <button class="add-to-batch-btn" data-value="firefox-browser"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ekle</button>
-                            <div class="app-details">
-                                <h3 class="app-name">Firefox Browser</h3>
-                                <p class="app-desc">Açık kaynaklı, özelleştirilebilir internet tarayıcısı.</p>
-                            </div>
-                            <button class="toggle-btn"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                        </div>
-                        <div class="os-selector">
-                            <button class="os-btn" data-os="windows">Windows</button>
-                            <div class="linux-group" style="display: flex; gap: 5px;">
-                                <button class="os-btn" data-os="linux">Linux</button>
-                                <select class="distro-select" style="display: none;">
-                                    <option value="apt">Ubuntu/Debian (apt)</option>
-                                    <option value="pacman">Arch (pacman/yay)</option>
-                                    <option value="dnf">Fedora (dnf)</option>
-                                </select>
-                            </div>
-                            <button class="os-btn" data-os="macos">macOS</button>
-                        </div>
-                    </div>
-                    <div class="terminal-container">
-                        <div class="terminal-box">
-                            <div class="terminal-header">
-                                <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                                <button class="copy-btn"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> kopyala</button>
-                            </div>
-                            <div class="terminal-code"><span class="prompt">$</span> <span class="command-text">Yükleniyor...</span></div>
-                        </div>
-                    </div>
-                </article>
+                <section id="communication" class="category-section hidden-tab">
+                    <div class="app-grid" id="communication-container"></div>
+                </section>
 
-                <article class="app-card" data-app-id="mullvad">
-                    <div class="app-info">
-                        <div class="app-header">
-                            <button class="add-to-batch-btn" data-value="mullvad"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ekle</button>
-                            <div class="app-details">
-                                <h3 class="app-name">Mullvad Browser</h3>
-                                <p class="app-desc">Tor ağı entegrasyonlu, parmak izi bırakmayan tarayıcı.</p>
-                            </div>
-                            <button class="toggle-btn"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                        </div>
-                        <div class="os-selector">
-                            <button class="os-btn" data-os="windows">Windows</button>
-                            <div class="linux-group" style="display: flex; gap: 5px;">
-                                <button class="os-btn" data-os="linux">Linux</button>
-                                <select class="distro-select" style="display: none;">
-                                    <option value="apt">Ubuntu/Debian (apt)</option>
-                                    <option value="pacman">Arch (pacman/yay)</option>
-                                    <option value="dnf">Fedora (dnf)</option>
-                                </select>
-                            </div>
-                            <button class="os-btn" data-os="macos">macOS</button>
-                        </div>
-                    </div>
-                    <div class="terminal-container">
-                        <div class="terminal-box">
-                            <div class="terminal-header">
-                                <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                                <button class="copy-btn"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> kopyala</button>
-                            </div>
-                            <div class="terminal-code"><span class="prompt">$</span> <span class="command-text">Yükleniyor...</span></div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
+                <section id="passwords" class="category-section hidden-tab">
+                    <div class="app-grid" id="passwords-container"></div>
+                </section>
 
-        <section id="communication" class="category-section hidden-tab">
-            <div class="app-grid">
-                <article class="app-card" data-app-id="signal">
-                    <div class="app-info">
-                        <div class="app-header">
-                            <button class="add-to-batch-btn" data-value="signal"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ekle</button>
-                            <div class="app-details">
-                                <h3 class="app-name">Signal Messenger</h3>
-                                <p class="app-desc">Uçtan uca şifreli, açık kaynaklı anlık mesajlaşma.</p>
-                            </div>
-                            <button class="toggle-btn"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                        </div>
-                        <div class="os-selector">
-                            <button class="os-btn" data-os="windows">Windows</button>
-                            <div class="linux-group" style="display: flex; gap: 5px;">
-                                <button class="os-btn" data-os="linux">Linux</button>
-                                <select class="distro-select" style="display: none;">
-                                    <option value="apt">Ubuntu/Debian (apt)</option>
-                                    <option value="pacman">Arch (pacman/yay)</option>
-                                    <option value="dnf">Fedora (dnf)</option>
-                                </select>
-                            </div>
-                            <button class="os-btn" data-os="macos">macOS</button>
-                        </div>
-                    </div>
-                    <div class="terminal-container">
-                        <div class="terminal-box">
-                            <div class="terminal-header">
-                                <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                                <button class="copy-btn"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> kopyala</button>
-                            </div>
-                            <div class="terminal-code"><span class="prompt">$</span> <span class="command-text">Yükleniyor...</span></div>
-                        </div>
-                    </div>
-                </article>
+                <section id="security" class="category-section hidden-tab">
+                    <div class="app-grid" id="security-container"></div>
+                </section>
 
-                <article class="app-card" data-app-id="thunderbird">
-                    <div class="app-info">
-                        <div class="app-header">
-                            <button class="add-to-batch-btn" data-value="thunderbird"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ekle</button>
-                            <div class="app-details">
-                                <h3 class="app-name">Mozilla Thunderbird</h3>
-                                <p class="app-desc">Gelişmiş PGP şifreleme destekli güvenli e-posta istemcisi.</p>
-                            </div>
-                            <button class="toggle-btn"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                        </div>
-                        <div class="os-selector">
-                            <button class="os-btn" data-os="windows">Windows</button>
-                            <div class="linux-group" style="display: flex; gap: 5px;">
-                                <button class="os-btn" data-os="linux">Linux</button>
-                                <select class="distro-select" style="display: none;">
-                                    <option value="apt">Ubuntu/Debian (apt)</option>
-                                    <option value="pacman">Arch (pacman/yay)</option>
-                                    <option value="dnf">Fedora (dnf)</option>
-                                </select>
-                            </div>
-                            <button class="os-btn" data-os="macos">macOS</button>
-                        </div>
-                    </div>
-                    <div class="terminal-container">
-                        <div class="terminal-box">
-                            <div class="terminal-header">
-                                <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                                <button class="copy-btn"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> kopyala</button>
-                            </div>
-                            <div class="terminal-code"><span class="prompt">$</span> <span class="command-text">Yükleniyor...</span></div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="passwords" class="category-section hidden-tab">
-            <div class="app-grid">
-                <article class="app-card" data-app-id="bitwarden">
-                    <div class="app-info">
-                        <div class="app-header">
-                            <button class="add-to-batch-btn" data-value="bitwarden"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ekle</button>
-                            <div class="app-details">
-                                <h3 class="app-name">Bitwarden</h3>
-                                <p class="app-desc">Bulut senkronizasyonlu, tamamen açık kaynaklı parola yöneticisi.</p>
-                            </div>
-                            <button class="toggle-btn"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                        </div>
-                        <div class="os-selector">
-                            <button class="os-btn" data-os="windows">Windows</button>
-                            <div class="linux-group" style="display: flex; gap: 5px;">
-                                <button class="os-btn" data-os="linux">Linux</button>
-                                <select class="distro-select" style="display: none;">
-                                    <option value="apt">Ubuntu/Debian (apt)</option>
-                                    <option value="pacman">Arch (pacman/yay)</option>
-                                    <option value="dnf">Fedora (dnf)</option>
-                                </select>
-                            </div>
-                            <button class="os-btn" data-os="macos">macOS</button>
-                        </div>
-                    </div>
-                    <div class="terminal-container">
-                        <div class="terminal-box">
-                            <div class="terminal-header">
-                                <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                                <button class="copy-btn"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> kopyala</button>
-                            </div>
-                            <div class="terminal-code"><span class="prompt">$</span> <span class="command-text">Yükleniyor...</span></div>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="app-card" data-app-id="keepassxc">
-                    <div class="app-info">
-                        <div class="app-header">
-                            <button class="add-to-batch-btn" data-value="keepassxc"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ekle</button>
-                            <div class="app-details">
-                                <h3 class="app-name">KeePassXC</h3>
-                                <p class="app-desc">Verileri sadece bilgisayarınızda (çevrimdışı) tutan parola kasası.</p>
-                            </div>
-                            <button class="toggle-btn"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                        </div>
-                        <div class="os-selector">
-                            <button class="os-btn" data-os="windows">Windows</button>
-                            <div class="linux-group" style="display: flex; gap: 5px;">
-                                <button class="os-btn" data-os="linux">Linux</button>
-                                <select class="distro-select" style="display: none;">
-                                    <option value="apt">Ubuntu/Debian (apt)</option>
-                                    <option value="pacman">Arch (pacman/yay)</option>
-                                    <option value="dnf">Fedora (dnf)</option>
-                                </select>
-                            </div>
-                            <button class="os-btn" data-os="macos">macOS</button>
-                        </div>
-                    </div>
-                    <div class="terminal-container">
-                        <div class="terminal-box">
-                            <div class="terminal-header">
-                                <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                                <button class="copy-btn"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> kopyala</button>
-                            </div>
-                            <div class="terminal-code"><span class="prompt">$</span> <span class="command-text">Yükleniyor...</span></div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="security" class="category-section hidden-tab">
-            <div class="app-grid">
-                <article class="app-card" data-app-id="bleachbit">
-                    <div class="app-info">
-                        <div class="app-header">
-                            <button class="add-to-batch-btn" data-value="bleachbit"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ekle</button>
-                            <div class="app-details">
-                                <h3 class="app-name">BleachBit</h3>
-                                <p class="app-desc">Dijital ayak izlerini silen ve dosyaları kalıcı olarak yok eden araç.</p>
-                            </div>
-                            <button class="toggle-btn"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                        </div>
-                        <div class="os-selector">
-                            <button class="os-btn" data-os="windows">Windows</button>
-                            <div class="linux-group" style="display: flex; gap: 5px;">
-                                <button class="os-btn" data-os="linux">Linux</button>
-                                <select class="distro-select" style="display: none;">
-                                    <option value="apt">Ubuntu/Debian (apt)</option>
-                                    <option value="pacman">Arch (pacman/yay)</option>
-                                    <option value="dnf">Fedora (dnf)</option>
-                                </select>
-                            </div>
-                            <button class="os-btn" data-os="macos">macOS</button>
-                        </div>
-                    </div>
-                    <div class="terminal-container">
-                        <div class="terminal-box">
-                            <div class="terminal-header">
-                                <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                                <button class="copy-btn"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> kopyala</button>
-                            </div>
-                            <div class="terminal-code"><span class="prompt">$</span> <span class="command-text">Yükleniyor...</span></div>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="app-card" data-app-id="syncthing">
-                    <div class="app-info">
-                        <div class="app-header">
-                            <button class="add-to-batch-btn" data-value="syncthing"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ekle</button>
-                            <div class="app-details">
-                                <h3 class="app-name">Syncthing</h3>
-                                <p class="app-desc">Merkezi bulut sunucusu kullanmadan uçtan uca şifreli dosya senkronizasyonu.</p>
-                            </div>
-                            <button class="toggle-btn"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                        </div>
-                        <div class="os-selector">
-                            <button class="os-btn" data-os="windows">Windows</button>
-                            <div class="linux-group" style="display: flex; gap: 5px;">
-                                <button class="os-btn" data-os="linux">Linux</button>
-                                <select class="distro-select" style="display: none;">
-                                    <option value="apt">Ubuntu/Debian (apt)</option>
-                                    <option value="pacman">Arch (pacman/yay)</option>
-                                    <option value="dnf">Fedora (dnf)</option>
-                                </select>
-                            </div>
-                            <button class="os-btn" data-os="macos">macOS</button>
-                        </div>
-                    </div>
-                    <div class="terminal-container">
-                        <div class="terminal-box">
-                            <div class="terminal-header">
-                                <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                                <button class="copy-btn"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> kopyala</button>
-                            </div>
-                            <div class="terminal-code"><span class="prompt">$</span> <span class="command-text">Yükleniyor...</span></div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-    </main>
+            </main>
 
     <footer class="footer">
         <div class="container">

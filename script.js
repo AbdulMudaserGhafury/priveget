@@ -1,19 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     
+    await loadAppsDynamically();
     detectAndSelectOS();
 
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const categorySections = document.querySelectorAll('.category-section');
-
     tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetId = button.getAttribute('data-target');
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            categorySections.forEach(section => section.classList.remove('active-tab'));
-            document.getElementById(targetId).classList.add('active-tab');
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                categorySections.forEach(section => section.classList.remove('active-tab'));
+                document.getElementById(targetId).classList.add('active-tab');
+            });
         });
-    });
 
     const mainContent = document.querySelector('.main-content');
 
