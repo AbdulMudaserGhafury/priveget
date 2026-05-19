@@ -28,32 +28,14 @@ $params = array_merge([$os, $distro], $apps);
 $stmt->execute($params);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$scriptContent = "";
+$commandsList = [];
 
-if ($os === 'windows') {
-    $scriptContent .= "@echo off\r\n";
-    $scriptContent .= "echo ===================================\r\n";
-    $scriptContent .= "echo PriveGet Toplu Kurulum Baslatiliyor\r\n";
-    $scriptContent .= "echo ===================================\r\n\r\n";
-    foreach ($results as $row) {
-        $scriptContent .= "echo Kuruluyor: " . $row['app_id'] . "...\r\n";
-        $scriptContent .= $row['command_text'] . "\r\n\r\n";
-    }
-    $scriptContent .= "echo Tum kurulumlar tamamlandi!\r\n";
-    $scriptContent .= "pause";
-} else {
-    $scriptContent .= "#!/bin/bash\n\n";
-    $scriptContent .= "echo \"===================================\"\n";
-    $scriptContent .= "echo \"PriveGet Toplu Kurulum Baslatiliyor\"\n";
-    $scriptContent .= "echo \"===================================\"\n\n";
-    foreach ($results as $row) {
-        $scriptContent .= "echo \"Kuruluyor: " . $row['app_id'] . "...\"\n";
-        $scriptContent .= $row['command_text'] . "\n\n";
-    }
-    $scriptContent .= "echo \"Tum kurulumlar tamamlandi!\"";
+foreach ($results as $row) {
+    $commandsList[] = trim($row['command_text']);
 }
 
-// PHP'den JavaScript'e JSON olarak kodu gönderiyoruz
+$scriptContent = implode(' && ', $commandsList);
+
 header('Content-Type: application/json');
 echo json_encode(["status" => "success", "script" => $scriptContent]);
 ?>
