@@ -227,3 +227,56 @@ function detectAndSelectOS() {
         }
     });
 }
+async function loadAppsDynamically() {
+    try {
+        const response = await fetch('get_apps.php');
+        const resData = await response.json();
+
+        if (resData.status === 'success') {
+            resData.data.forEach(app => {
+                const container = document.getElementById(`${app.category}-container`);
+                if (!container) return;
+
+                // Logosuz minimalist kart şablonu
+                const cardHtml = `
+                <article class="app-card" data-app-id="${app.app_id}">
+                    <div class="app-info">
+                        <div class="app-header">
+                            <button class="add-to-batch-btn" data-value="${app.app_id}"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ekle</button>
+                            <div class="app-details">
+                                <h3 class="app-name">${app.app_name}</h3>
+                                <p class="app-desc">${app.app_desc}</p>
+                            </div>
+                            <button class="toggle-btn"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                        </div>
+                        <div class="os-selector">
+                            <button class="os-btn" data-os="windows">Windows</button>
+                            <div class="linux-group" style="display: flex; gap: 5px;">
+                                <button class="os-btn" data-os="linux">Linux</button>
+                                <select class="distro-select" style="display: none;">
+                                    <option value="apt">Ubuntu/Debian (apt)</option>
+                                    <option value="pacman">Arch (pacman/yay)</option>
+                                    <option value="dnf">Fedora (dnf)</option>
+                                </select>
+                            </div>
+                            <button class="os-btn" data-os="macos">macOS</button>
+                        </div>
+                    </div>
+                    <div class="terminal-container">
+                        <div class="terminal-box">
+                            <div class="terminal-header">
+                                <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                                <button class="copy-btn"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> kopyala</button>
+                            </div>
+                            <div class="terminal-code"><span class="prompt">$</span> <span class="command-text">Yükleniyor...</span></div>
+                        </div>
+                    </div>
+                </article>`;
+                
+                container.insertAdjacentHTML('beforeend', cardHtml);
+            });
+        }
+    } catch (error) {
+        console.error("Uygulamalar yüklenirken hata oluştu:", error);
+    }
+}
