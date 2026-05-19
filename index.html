@@ -27,6 +27,12 @@
                 <button class="tab-btn" data-target="communication">Güvenli İletişim</button>
                 <button class="tab-btn" data-target="passwords">Parola Yöneticileri</button>
                 <button class="tab-btn" data-target="security">Veri Güvenliği</button>
+                <button class="tab-btn" data-target="office">Ofis ve Notlar</button>
+                <button class="tab-btn" data-target="calendar_mail">Takvim ve E-posta</button>
+                <button class="tab-btn" data-target="cloud">Bulut</button>
+                <button class="tab-btn" data-target="media">Medya</button>
+                <button class="tab-btn" data-target="development">Geliştirici Araçları</button>
+                <button class="tab-btn" data-target="utilities">Araçlar</button>
             </nav>
         </div>
     </header>
@@ -72,7 +78,29 @@
                 <section id="security" class="category-section hidden-tab">
                     <div class="app-grid" id="security-container"></div>
                 </section>
+                <section id="office" class="category-section hidden-tab">
+                    <div class="app-grid" id="office-container"></div>
+                </section>
 
+                <section id="calendar_mail" class="category-section hidden-tab">
+                    <div class="app-grid" id="calendar_mail-container"></div>
+                </section>
+
+                <section id="cloud" class="category-section hidden-tab">
+                    <div class="app-grid" id="cloud-container"></div>
+                </section>
+
+                <section id="media" class="category-section hidden-tab">
+                    <div class="app-grid" id="media-container"></div>
+                </section>
+
+                <section id="development" class="category-section hidden-tab">
+                    <div class="app-grid" id="development-container"></div>
+                </section>
+
+                <section id="utilities" class="category-section hidden-tab">
+                    <div class="app-grid" id="utilities-container"></div>
+                </section>
             </main>
 
     <footer class="footer">
@@ -90,9 +118,9 @@
             <div class="batch-controls">
                 <select id="batch-os-select" class="batch-select">
                     <option value="windows">Windows</option>
-                    <option value="linux-apt">Ubuntu/Debian (apt)</option>
-                    <option value="linux-pacman">Arch Linux (pacman)</option>
-                    <option value="linux-dnf">Fedora (dnf)</option>
+                    <option value="linux-apt">Ubuntu/Debian</option>
+                    <option value="linux-pacman">Arch Linux</option>
+                    <option value="linux-dnf">Fedora</option>
                     <option value="macos">macOS</option>
                 </select>
                 <button id="generate-script-btn" class="batch-btn">Kodu Oluştur</button>
