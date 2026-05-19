@@ -2,7 +2,7 @@ services:
   web:
     build: .
     ports:
-      - "2222:22"
+      - "2222:80"
     volumes:
       - .:/var/www/html
     depends_on:
