@@ -1,8 +1,11 @@
 <?php
+$env=parse_ini_file(__DIR__.'/.env'); //.env dosyasini okuyoruz
+
 $host = 'localhost';
 $dbname = 'priveget_db'; 
 $user = 'root';          
-$pass = 'kendi veritabani sifresi'; //test
+//$pass = $env['DATABASE_PASSWORD']; //database sifresini kullaniyoruz
+$pass = 'suleyman45';
 
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
