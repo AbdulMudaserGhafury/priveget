@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadAppsDynamically();
     detectAndSelectOS();
 
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const categorySections = document.querySelectorAll('.category-section');
+
     tabButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const targetId = button.getAttribute('data-target');
