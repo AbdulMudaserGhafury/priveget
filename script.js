@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     
-    await loadAppsDynamically();
+    await loadAppsDynamicly();
     detectAndSelectOS();
 
     const tabButtons = document.querySelectorAll('.tab-btn');
