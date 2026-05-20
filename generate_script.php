@@ -13,8 +13,8 @@ $apps = $request['apps'];
 $os = $request['os']; // isletim sistemine gore request 
 
 if (strpos($os, 'linux-') === 0) {
-    $os = 'linux';
     $distro = str_replace('linux-', '', $os);
+    $os = 'linux';
 } else {
     $os = $os;
     $distro = 'default';
