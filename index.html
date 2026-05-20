@@ -22,7 +22,7 @@
                 PriveGet <span class="subtitle">| Privacy Toolbox</span>
             </h1>
             
-            <nav class="tab-nav">
+            <nav class="tab-nav"> //ustteki ana kategori butonlari
                 <button class="tab-btn active" data-target="how-it-works">Nasıl Çalışır?</button>
                 <button class="tab-btn" data-target="browsers">Web Tarayıcıları</button>
                 <button class="tab-btn" data-target="communication">Güvenli İletişim</button>
@@ -48,22 +48,22 @@
                             <div class="step-box">
                                 <div class="step-number">1</div>
                                 <h3>Araçlarını Seç</h3>
-                                <p>Kategorilerde gezin ve sistemine kurmak istediğin araçların yanındaki 'Ekle' butonuna tıkla.</p>
+                                <p>Kategorilerde gezin ve sistemine kurmak istediğin araçların solundaki 'Ekle' butonuna tıkla.</p>
                             </div>
                             <div class="step-box">
                                 <div class="step-number">2</div>
-                                <h3>Toplu Kod Üret</h3>
+                                <h3>Kodlari Üret</h3>
                                 <p>Ekranın altında beliren menüden işletim sistemini seç ve özel kurulum komutlarını oluştur.</p>
                             </div>
                             <div class="step-box">
                                 <div class="step-number">3</div>
                                 <h3>Kopyala ve Çalıştır</h3>
-                                <p>Oluşturulan kodu tek tuşla kopyala, terminal veya komut satırına yapıştır.</p>
+                                <p>Oluşturulan kodu kopyala, terminal'e yapıştır.</p>
                             </div>
                         </div>
                     </div>
                 </section>
-                
+                // burada da bos divler var bunlarin icini databaseden veriyi cekip dinamik olarak dolduracagiz sonra
                 <section id="browsers" class="category-section hidden-tab">
                     <div class="app-grid" id="browsers-container"></div>
                 </section>
@@ -106,7 +106,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 PriveGet | Privacy Toolbox</p>
+            <p>&copy; 2026 PriveGet | Privacy Toolbox</p> //TODO - github linki ekle
             <p class="developers">Geliştiriciler: Mudaser Azizyar & Suleyman Suleymanov</p>
         </div>
     </footer>
@@ -124,7 +124,7 @@
                     <option value="linux-dnf">Fedora</option>
                     <option value="macos">macOS</option>
                 </select>
-                <button id="generate-script-btn" class="batch-btn">Kodu Oluştur</button>
+                <button id="generate-script-btn" class="batch-btn">Kodları Oluştur</button>
             </div>
         </div>
     </div>
@@ -132,7 +132,7 @@
     <div id="code-modal" class="modal-overlay">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Özel Kurulum Kodun</h3>
+                <h3>Kurulum Kodları</h3>
                 <button id="close-modal-btn" class="close-btn">&times;</button>
             </div>
             <div class="terminal-box modal-terminal">

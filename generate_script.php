@@ -5,7 +5,7 @@ $rawData = file_get_contents("php://input");
 $request = json_decode($rawData, true);
 
 if (!$request || empty($request['apps'])) { //uygulama secmediyse uyari gostercek ekranda
-    echo json_encode(["status" => "error", "message" => "Hiç uygulama seçilmedi."]);
+    echo json_encode(["status" => "error", "message" => "Lütfen en azı 1 uygulama seçiniz!"]);
     exit;
 }
 

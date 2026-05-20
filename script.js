@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         const copyBtn = e.target.closest('.copy-btn');
-        if (copyBtn && !e.target.closest('#copy-modal-btn')) { // Modal dışındaki kopyalama
+        if (copyBtn && !e.target.closest('#copy-modal-btn')) { 
             const card = copyBtn.closest('.app-card');
             const commandText = card.querySelector('.command-text').innerText;
             copyToClipboard(commandText, copyBtn);
@@ -106,7 +106,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             const data = await response.json();
 
             if (data.status === 'success') {
-                // PHP'den gelen kodu ekrana yaz ve Modalı aç
                 codeBlock.innerText = data.script;
                 modal.classList.add('active');
             } else {

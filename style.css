@@ -1,4 +1,4 @@
-/* --- 1. CSS Değişkenleri (Renk Paleti ve Sabitler) --- */
+/* ana renkler */
 :root {
     --bg-dark: #0f172a;
     --card-bg: #1e293b;
@@ -11,15 +11,13 @@
     --font-main: 'Inter', sans-serif;
     --font-mono: 'Consolas', 'Courier New', monospace;
 }
-
-/* --- 2. CSS Sıfırlama (Reset) --- */
+/*css sifirlama */
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
 }
 
-/* --- 3. Temel Gövde (Body) Ayarları --- */
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
@@ -34,14 +32,14 @@ body {
     flex: 1; 
 }
 
-/* --- 4. Taşıyıcı Kutu (Container) --- */
+/* konteynr */
 .container { 
     max-width: 900px; 
     margin: 0 auto; 
     padding: 0 20px; 
 }
 
-/* --- 5. Başlık (Header) ve Sekme Menüsü Tasarımı --- */
+/* baslik ve sekme kismi */
 .header { 
     padding-top: 30px; 
     margin-bottom: 40px; 
@@ -53,12 +51,11 @@ body {
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    gap: 12px; /* Logo ile yazı arasındaki boşluk */
+    gap: 12px; 
     margin-bottom: 5px; 
 }
 
 .brand-icon {
-    /* Logoya hafif bir parlama efekti veriyoruz */
     filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.3));
 }
 
@@ -109,7 +106,6 @@ body {
     border-bottom-right-radius: 0;
 }
 
-/* --- 6. Kategori Gizleme / Gösterme Mantığı --- */
 .category-section { 
     display: none; 
     animation: fadeIn 0.4s ease; 
@@ -124,7 +120,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- 7. NASIL ÇALIŞIR (HERO) BÖLÜMÜ --- */
 .hero-section {
     text-align: center;
     padding: 20px 0 40px 0;
@@ -196,7 +191,6 @@ body {
     font-size: 14px;
 }
 
-/* --- 8. Uygulama Kartı (App Card) Tasarımı --- */
 .app-grid { 
     display: flex; 
     flex-direction: column; 
@@ -260,7 +254,7 @@ body {
     transform: rotate(180deg); 
 }
 
-/* --- 9. İşletim Sistemi Seçici (OS Selector) --- */
+/* isletim sistemi secme kismi */
 .os-selector { 
     display: flex; 
     gap: 10px; 
@@ -301,7 +295,7 @@ body {
     color: var(--accent-green); 
 }
 
-/* --- 10. Terminal Kutusu ve Akordeon Yapısı --- */
+/* kod olustur kismi */
 .terminal-container { 
     padding: 0 20px 20px 20px; 
     max-height: 0; 
@@ -380,7 +374,7 @@ body {
     user-select: none; 
 }
 
-/* --- 11. FOOTER (ALT BİLGİ) --- */
+/* footer */
 .footer {
     text-align: center;
     padding: 40px 0 20px 0;
@@ -395,19 +389,18 @@ body {
     color: #64748b;
 }
 
-/* Başlığın tamamını tıklanabilir yapma */
 .app-header { 
     cursor: pointer; 
     border-radius: 8px;
     transition: background-color 0.2s ease;
-    padding: 5px; /* Tıklama alanını biraz genişletmek için */
+    padding: 5px; 
 }
 
 .app-header:hover {
-    background-color: rgba(255, 255, 255, 0.03); /* Üzerine gelince hafif parlama */
+    background-color: rgba(255, 255, 255, 0.03); 
 }
 
-/* Linux Dağıtım Seçim Kutusu */
+/* distro secme kismi */
 .distro-select {
     background-color: transparent;
     border: 1px solid var(--border-color);
@@ -429,7 +422,7 @@ body {
     color: var(--text-main);
 }
 
-/* --- 12. TOPLU KURULUM (BATCH SCRIPT) YÜZEN KUTUSU (FLOATING WIDGET) --- */
+/* toplu kurulum olusturma dugmesi kismi */
 .app-checkbox {
     display: none;
 }
@@ -462,41 +455,39 @@ body {
     color: var(--accent-green);
 }
 
-/* Yüzen Kutu (Sağ Alt Köşe) Ayarları */
 .batch-bar {
     position: fixed;
-    bottom: 30px; /* Ekranın altından boşluk */
-    right: 30px;  /* Ekranın sağından boşluk */
+    bottom: 30px; 
+    right: 30px;  
     background-color: #111827;
     border: 1px solid var(--accent-green);
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Şık bir gölge */
-    width: 250px; /* Kutunun genişliği */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); 
+    width: 250px; 
     z-index: 1000;
     
-    /* Zıplama Efektli Animasyon */
+    /* efekt*/
     transform: translateY(150px) scale(0.9);
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    pointer-events: none; /* Gizliyken tıklanmayı engeller */
+    pointer-events: none; 
 }
 
-/* Kutu Görünür Olduğunda */
+/* kutu gorunur iken calisacak kod blogu*/
 .batch-bar.visible {
     transform: translateY(0) scale(1);
     opacity: 1;
     pointer-events: auto;
 }
 
-/* Kutunun İçini Alt Alta Dizme */
 .batch-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Kaç Araç Seçildi Yazısı */
+/* kac tane uygulama secildi sayisi*/
 .batch-info {
     font-size: 15px;
     font-weight: 500;
@@ -512,7 +503,7 @@ body {
     font-size: 18px;
 }
 
-/* Seçici ve İndir Butonu Konteyneri */
+/* indir ve secisi kismi */
 .batch-controls {
     display: flex;
     flex-direction: column;
@@ -533,7 +524,7 @@ body {
     cursor: pointer;
 }
 
-/* Toplu İndir Butonu */
+/* toplu indir butonu*/
 .batch-btn {
     background-color: var(--accent-green);
     color: #000;
@@ -552,7 +543,7 @@ body {
     color: #fff;
 }
 
-/* --- 13. KOD GÖSTERİM AÇILIR PENCERESİ (MODAL) --- */
+/* uygulamanin ustune tiklayinca acilan kod gosteren kisim*/
 .modal-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -615,13 +606,13 @@ body {
 
 .modal-terminal {
     max-height: 400px;
-    overflow-y: auto; /* Kodlar uzunsa kaydırma çubuğu çıkar */
+    overflow-y: auto; 
 }
 
 .modal-terminal pre {
     font-family: var(--font-mono);
     font-size: 14px;
     color: var(--accent-green);
-    white-space: pre-wrap; /* Kodun kutu dışına taşmasını engeller */
+    white-space: pre-wrap; 
     margin: 0;
 }
