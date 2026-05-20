@@ -1,8 +1,8 @@
 <?php
 require 'db.php'; // databese baglantisini db dosyasi ile yapiyorz
 
-$rawData = file_get_contents("php://input");
-$request = json_decode($rawData, true);
+$data1 = file_get_contents("php://input");
+$request = json_decode($data1, true);
 
 if (!$request || empty($request['apps'])) { //uygulama secmediyse uyari gostercek ekranda
     echo json_encode(["status" => "error", "message" => "Lütfen en azı 1 uygulama seçiniz!"]);
@@ -10,13 +10,13 @@ if (!$request || empty($request['apps'])) { //uygulama secmediyse uyari gosterce
 }
 
 $apps = $request['apps'];
-$osSelection = $request['os']; // isletim sistemine gore request 
+$os = $request['os']; // isletim sistemine gore request 
 
-if (strpos($osSelection, 'linux-') === 0) {
+if (strpos($os, 'linux-') === 0) {
     $os = 'linux';
-    $distro = str_replace('linux-', '', $osSelection);
+    $distro = str_replace('linux-', '', $os);
 } else {
-    $os = $osSelection;
+    $os = $os;
     $distro = 'default';
 }
 
@@ -28,14 +28,14 @@ $params = array_merge([$os, $distro], $apps);
 $stmt->execute($params);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$commandsList = [];
+$commandList = [];
 
 foreach ($results as $row) {
-    $commandsList[] = trim($row['command_text']);
+    $commandList[] = trim($row['command_text']);
 }
 
-$scriptContent = implode(' && ', $commandsList); // aralara && atiyoruz ki hepsini tek satirda calistirabilelim
+$script = implode(' && ', $commandList); // aralara && atiyoruz ki hepsini tek satirda calistirabilelim
 
 header('Content-Type: application/json');
-echo json_encode(["status" => "success", "script" => $scriptContent]);
+echo json_encode(["status" => "success", "script" => $script]);
 ?>

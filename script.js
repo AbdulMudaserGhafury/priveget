@@ -225,17 +225,16 @@ function detectAndSelectOS() {
         }
     });
 }//indexte bahsettigim bos divlerin icini doldurma kismi
-async function loadAppsDynamically() {
+async function loadAppsDynamicly() {
     try {
         const response = await fetch('get_apps.php');
-        const resData = await response.json();
+        const data2 = await response.json();
 
-        if (resData.status === 'success') {
-            resData.data.forEach(app => {
+        if (data2.status === 'success') {
+            data2.data.forEach(app => {
                 const container = document.getElementById(`${app.category}-container`);
                 if (!container) return;
 
-                // Logosuz minimalist kart şablonu
                 const cardHtml = `
                 <article class="app-card" data-app-id="${app.app_id}">
                     <div class="app-info">
