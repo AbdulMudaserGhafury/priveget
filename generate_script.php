@@ -1,16 +1,16 @@
 <?php
-require 'db.php'; 
+require 'db.php'; // databese baglantisini db dosyasi ile yapiyorz
 
 $rawData = file_get_contents("php://input");
 $request = json_decode($rawData, true);
 
-if (!$request || empty($request['apps'])) {
+if (!$request || empty($request['apps'])) { //uygulama secmediyse uyari gostercek ekranda
     echo json_encode(["status" => "error", "message" => "Hiç uygulama seçilmedi."]);
     exit;
 }
 
 $apps = $request['apps'];
-$osSelection = $request['os']; 
+$osSelection = $request['os']; // isletim sistemine gore request 
 
 if (strpos($osSelection, 'linux-') === 0) {
     $os = 'linux';
@@ -34,7 +34,7 @@ foreach ($results as $row) {
     $commandsList[] = trim($row['command_text']);
 }
 
-$scriptContent = implode(' && ', $commandsList);
+$scriptContent = implode(' && ', $commandsList); // aralara && atiyoruz ki hepsini tek satirda calistirabilelim
 
 header('Content-Type: application/json');
 echo json_encode(["status" => "success", "script" => $scriptContent]);

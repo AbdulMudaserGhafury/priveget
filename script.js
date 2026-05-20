@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // --- YENİ: MODAL VE KOD OLUŞTURMA MANTIĞI ---
     const generateBtn = document.getElementById('generate-script-btn');
     const batchOsSelect = document.getElementById('batch-os-select');
     const modal = document.getElementById('code-modal');
@@ -83,10 +82,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const copyModalBtn = document.getElementById('copy-modal-btn');
     const codeBlock = document.getElementById('generated-code-block');
 
-    // Modalı Kapatma Olayları
     closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
     window.addEventListener('click', (e) => {
-        if(e.target === modal) modal.classList.remove('active');
+        if(e.target === modal) modal.classList.remove('active'); //TODO - sonra bu kismi gozden gecir
     });
 
     generateBtn.addEventListener('click', async () => {
@@ -123,13 +121,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // Modal içindeki toplu kopyalama butonu
+    // toplu kopyalma butonu kismi
     copyModalBtn.addEventListener('click', () => {
         copyToClipboard(codeBlock.innerText, copyModalBtn);
     });
 });
 
-// Yardımcı Kopyalama Fonksiyonu
+// yardimci kopyalama
 function copyToClipboard(text, buttonElement) {
     navigator.clipboard.writeText(text).then(() => {
         const originalHTML = buttonElement.innerHTML;
@@ -193,7 +191,7 @@ async function fetchCommand(appId, selectedOS, cardElement) {
         commandTextElement.style.color = "#ff5f56";
     }
 }
-
+//otomatik isletim sistemi algilama kismi
 function detectAndSelectOS() {
     const userAgent = window.navigator.userAgent.toLowerCase();
     let detectedOS = 'windows';
@@ -227,7 +225,7 @@ function detectAndSelectOS() {
             fetchCommand(appId, detectedOS, card);
         }
     });
-}
+}//indexte bahsettigim bos divlerin icini doldurma kismi
 async function loadAppsDynamically() {
     try {
         const response = await fetch('get_apps.php');
